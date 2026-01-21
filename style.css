@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #333, #555);
+}
+
+.ball {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #ff4d4d, #ff1a1a);
+  border-radius: 50%;
+  animation: bounce 2s cubic-bezier(.28,.84,.42,1) infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-300px); }
+}
